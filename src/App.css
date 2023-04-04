@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,200;1,400;1,500;1,700&display=swap");
+
+.App {
+  @apply h-[100vh] w-[100%] bg-[url("/image/bg2.avif")] bg-no-repeat bg-cover bg-center text-[#f1f1f1e0] flex flex-col justify-center items-center;
+  font-family: "Montserrat", sans-serif;
+}
