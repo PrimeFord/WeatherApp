@@ -14,8 +14,8 @@ const SearchComponent = () => {
         />
         <button>
           <img
-            className="h-[2.5rem] w-[2.5rem] bg-[#f1f1f1e0] p-1 hover:bg-[#c1c1c1]"
-            src="/image/users.svg"
+            className="h-[2.5rem] w-[2.5rem] bg-[#f1f1f1e0] p-[0.6rem] hover:bg-[#c1c1c1]"
+            src="/image/map1.svg"
             alt=""
           />
         </button>
