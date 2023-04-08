@@ -14,7 +14,7 @@ const WeatherComponents = () => {
       </div>
       <div className="flex flex-row h-[100%] items-center">
         <Display />
-        <div className="flex flex-col items-center">
+        <div className="w-[100%] h-[100%] flex flex-col items-center">
           <Daily />
           <Graph />
         </div>
