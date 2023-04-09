@@ -32,7 +32,7 @@ const Display = () => {
             src="/image/presssure.png"
             alt=""
           />
-          <p>80%</p>
+          <p>8%</p>
           <p className="text-[.75rem] font-[500]">Pressure</p>
         </div>
       </div>
