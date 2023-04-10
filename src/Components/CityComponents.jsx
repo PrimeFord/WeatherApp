@@ -4,7 +4,7 @@ import SearchComponent from "./SearchComponent";
 
 const CityComponents = () => {
   return (
-    <div className="h-[75%] w-[65%] text-center">
+    <div className="h-[75%] w-[95%] text-center">
       <Title />
       <SearchComponent />
     </div>
