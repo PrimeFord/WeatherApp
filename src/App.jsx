@@ -30,8 +30,8 @@ function App() {
   };
   return (
     <div className="App">
-      <CityComponents setCity={setCity} fetchWeather={fetchWeather} />
-      {/* <WeatherComponents /> */}
+      {/* <CityComponents setCity={setCity} fetchWeather={fetchWeather} /> */}
+      <WeatherComponents />
     </div>
   );
 }
