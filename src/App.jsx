@@ -12,6 +12,7 @@ function App() {
   const url1 = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
   // const url2 = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
 
+  //fetch
   const fetchWeather = async (e) => {
     e.preventDefault();
     // axios.get(cond ? url2 : url1);
