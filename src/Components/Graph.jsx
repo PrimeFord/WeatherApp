@@ -107,7 +107,7 @@ const Graph = ({ weather }) => {
   };
   return (
     <div className="h-[60%] w-[100%] relative flex gap-4">
-      <div className="h-[100%] w-[100%]">
+      <div className="h-[100%] w-[60%]">
         <p className="text-[1.25rem] font-[500] m-2 text-left">Graph</p>
         <div className="w-[100%] h-[80%] relative flex">
           <Line
@@ -118,7 +118,7 @@ const Graph = ({ weather }) => {
           ></Line>
         </div>
       </div>
-      <div>
+      <div className="w-[40%]">
         <p className="text-[1.25rem] font-[500] m-2 text-left">Suggestion</p>
         <div className="w-[100%] h-[80%] relative flex">
           <p>
