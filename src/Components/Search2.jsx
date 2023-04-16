@@ -1,13 +1,18 @@
 import React from "react";
 
-const Search2 = () => {
+const Search2 = (props) => {
   return (
     <div className="h-fit w-fit">
-      <form className="flex flex-row justify-center" action="">
+      <form
+        className="flex flex-row justify-center"
+        action=""
+        onSubmit={props.fetchWeather}
+      >
         <input
           className="w-[15rem] h-[2.5rem] py-2 px-4 rounded-l-[1.25rem] bg-[#f1f1f1e0] outline-none border-none text-[black]"
           type="text"
           placeholder="Enter your city"
+          onChange={(e) => props.setCity(e.target.value)}
         />
         <button>
           <img

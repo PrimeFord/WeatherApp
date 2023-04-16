@@ -5,18 +5,25 @@ import Display from "./Display";
 import Daily from "./Daily";
 import Graph from "./Graph";
 
-const WeatherComponents = () => {
+const WeatherComponents = ({
+  setCity,
+  fetchWeather,
+  cityy,
+  main,
+  wind,
+  weather,
+}) => {
   return (
     <div className="bg-[] p-5 h-[100vh] w-[100%] flex flex-col gap-4">
       <div className="flex flex-row items-center justify-between">
         <Title2 />
-        <Search2 />
+        <Search2 setCity={setCity} fetchWeather={fetchWeather} />
       </div>
       <div className="flex flex-row h-[100%] items-center gap-6">
-        <Display />
+        <Display cityy={cityy} main={main} wind={wind} weather={weather} />
         <div className="w-[100%] h-[100%] flex flex-col gap-4 items-center">
-          <Daily />
-          <Graph />
+          <Daily main={main} weather={weather} />
+          <Graph weather={weather} />
         </div>
       </div>
     </div>
