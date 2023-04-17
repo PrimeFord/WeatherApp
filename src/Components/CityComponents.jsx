@@ -3,20 +3,16 @@ import Title from "./Title";
 import SearchComponent from "./SearchComponent";
 
 const CityComponents = (props) => {
-  // if (city.trim().length !== 0) {
-  //   setEmpty("");
-  // } else {
-  //   setEmpty("Please enter an address in this field");
-  // }
   return (
-    <div className="h-[75%] w-[95%] text-center">
+    <div className="h-[100vh] pt-4 lg:h-[75%] w-[95%] text-center">
       <Title />
       <SearchComponent
         setCity={props.setCity}
+        city={props.city}
         fetchWeather={props.fetchWeather}
+        empty={props.empty}
+        error={props.error}
       />
-      {/* <p className="text-[#f53434f1] lg:text-left lg:ml-[10rem]">{empty}</p> */}
-      {/* <p className="text-[#f53434f1] lg:text-left lg:ml-[10rem]">sorry</p> */}
     </div>
   );
 };

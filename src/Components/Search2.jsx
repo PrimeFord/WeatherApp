@@ -2,7 +2,7 @@ import React from "react";
 
 const Search2 = (props) => {
   return (
-    <div className="h-fit w-fit">
+    <div className="h-fit w-fit hidden lg:block">
       <form
         className="flex flex-row justify-center"
         action=""

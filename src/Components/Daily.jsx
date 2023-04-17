@@ -24,9 +24,9 @@ const Daily = ({ main, weather }) => {
   let date4 = `${month} ${day.getDate() + 3}`;
   let date5 = `${month} ${day.getDate() + 4}`;
   return (
-    <div className="h-[40%] w-[100%] ">
-      <p className="text-[1.25rem] font-[500] m-2">Daily</p>
-      <div className="w-[100%] h-[100%] flex flex-nowrap justify-around">
+    <div className="w-[100%] lg:h-[40%] lg:w-[100%] lg:mt-0 ">
+      <p className="lg:text-[1.25rem] font-[500] m-2">Daily</p>
+      <div className="w-[100%] h-[100%] gap-2 flex flex-col lg:flex-row flex-nowrap lg:justify-around">
         <Day
           day={date}
           cloud={weather.list[0].weather[0].main}

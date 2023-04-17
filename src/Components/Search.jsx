@@ -9,7 +9,7 @@ const Search = (props) => {
             className="w-[100%] lg:w-[30%] h-[2.5rem] py-2 px-4 rounded-l-[1.25rem] bg-[#f1f1f1e0] outline-none border-none"
             type="text"
             placeholder="Enter your city"
-            // value={}
+            value={props.city}
             onChange={(e) => props.setCity(e.target.value)}
           />
           <button className="">
@@ -23,6 +23,18 @@ const Search = (props) => {
             {/* bg-gradient-to-r from-[#071f3d] to-[#294357] */}
             Search
           </button>
+        </div>
+        <div className="hidden lg:flex lg:flex-col">
+          <p className="text-[#ff661ff6] mt-2">{props.empty}</p>
+          <p className="text-[#ff661ff6] mt-2">{props.error}</p>
+        </div>
+        <div className="lg:hidden flex flex-col mt-1">
+          <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]">
+            {props.empty}
+          </p>
+          <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]]">
+            {props.error}
+          </p>
         </div>
         <div>
           <button className="h-[2.5rem] w-[100%] mt-4 block lg:hidden p-2 rounded-[1.25rem] cursor-pointer hover:bg-[#294357] hover:text-[white] text-white bg-[teal]">

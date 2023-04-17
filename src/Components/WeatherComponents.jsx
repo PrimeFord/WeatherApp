@@ -4,6 +4,7 @@ import Search2 from "./Search2";
 import Display from "./Display";
 import Daily from "./Daily";
 import Graph from "./Graph";
+import Search3 from "./Search3";
 
 const WeatherComponents = ({
   setCity,
@@ -14,14 +15,15 @@ const WeatherComponents = ({
   weather,
 }) => {
   return (
-    <div className="bg-[] p-5 h-[100vh] w-[100%] flex flex-col gap-4">
-      <div className="flex flex-row items-center justify-between">
+    <div className=" p-2 lg:p-5 lg:h-[100vh] w-[100%] flex flex-col gap-2 lg:gap-4">
+      <div className="flex lg:flex-row flex-col items-center justify-between">
+        <Search3 setCity={setCity} fetchWeather={fetchWeather} />
         <Title2 />
         <Search2 setCity={setCity} fetchWeather={fetchWeather} />
       </div>
-      <div className="flex flex-row h-[100%] items-center gap-6">
+      <div className="flex flex-col lg:flex-row h-[90%] lg:items-center lg:gap-6">
         <Display cityy={cityy} main={main} wind={wind} weather={weather} />
-        <div className="w-[100%] h-[100%] flex flex-col gap-4 items-center">
+        <div className="w-[100%] h-[100%] mt-5 lg:mt-0 flex flex-col gap-2 items-center justify-between">
           <Daily main={main} weather={weather} />
           <Graph weather={weather} />
         </div>

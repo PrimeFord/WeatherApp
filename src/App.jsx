@@ -13,7 +13,8 @@ function App() {
   const [wind, setWind] = useState("");
   const [weather, setWeather] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [empty, setEmpty] = useState("");
+  const [empty, setEmpty] = useState("");
+  const [error, setError] = useState("");
 
   const url1 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
   // const url2 = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
@@ -21,7 +22,12 @@ function App() {
   //fetch
   const fetchWeather = async (e) => {
     e.preventDefault();
-
+    if (city.trim().length !== 0) {
+      setEmpty("");
+    } else {
+      setEmpty("Please enter a city name in this field");
+      console.log("empty");
+    }
     // axios.get(cond ? url2 : url1);
     try {
       // setLoading(true);
@@ -36,7 +42,8 @@ function App() {
       // setError("");
     } catch (error) {
       console.log(error);
-      // setError(error.response.data.error.slice(0, 23));
+      setError(error.response.data.message);
+      console.log(error.response.data.message);
     } finally {
       setLoading(true);
       setCity("");
@@ -59,7 +66,13 @@ function App() {
           weather={weather}
         />
       ) : (
-        <CityComponents setCity={setCity} fetchWeather={fetchWeather} />
+        <CityComponents
+          setCity={setCity}
+          city={city}
+          empty={empty}
+          error={error}
+          fetchWeather={fetchWeather}
+        />
       )}
     </div>
   );
