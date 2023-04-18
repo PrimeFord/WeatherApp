@@ -23,7 +23,7 @@ const Display = ({ cityy, main, wind, weather }) => {
         {weather.list[0].weather[0].description}
       </p>
       <p className="text-[3.5rem] hidden lg:block">{Math.round(main.temp)}°C</p>
-      <div className="flex bg-[#f1f1e050] lg:bg-transparent rounded-[0.75rem] lg:flex-wrap lg:w-[75%] justify-between gap-4 mt-2 lg:mt-0 p-2">
+      <div className="flex bg-[#f1f1e050] w-[90%] lg:bg-transparent rounded-[0.75rem] lg:flex-wrap lg:w-[75%] justify-between gap-4 mt-2 lg:mt-0 p-2">
         <div className="flex flex-col w-[25%] lg:w-[30%] items-center">
           <img className=" h-[2rem] w-[2rem]" src="/image/humid5.png" alt="" />
           <p className="text-[.9rem]">{main.humidity}%</p>
