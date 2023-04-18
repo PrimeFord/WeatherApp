@@ -2,7 +2,7 @@ import React from "react";
 
 const Display = ({ cityy, main, wind, weather }) => {
   return (
-    <div className="w-[100%]  h-[fit] lg:w-[35%] lg:bg-none bg-[url(/image/bg2.avif)] bg-no-repeat bg-cover bg-center bg-blend-normal rounded-md lg:h-[100%] flex flex-col items-center justify-between py-2 gap-2 lg:gap-0 text-center lg:border-solid lg:border-r-2 p-4 lg:border-[#f1f1f1e0]">
+    <div className="w-[100%]  h-[fit] lg:w-[35%] lg:bg-none bg-[url(/image/bg2.avif)] bg-no-repeat bg-cover bg-center bg-blend-normal rounded-md lg:h-[100%] flex flex-col items-center justify-between py-2 gap-2 lg:gap-0 text-center lg:border-solid lg:border-r-2 px-4 lg:border-[#f1f1f1e0]">
       <p className="text-[0.9rem] lg:text-[1.5rem]">
         {cityy.name}, <span>{cityy.country}</span>
       </p>
@@ -24,12 +24,12 @@ const Display = ({ cityy, main, wind, weather }) => {
       </p>
       <p className="text-[3.5rem] hidden lg:block">{Math.round(main.temp)}°C</p>
       <div className="flex bg-[#f1f1e050] lg:bg-transparent rounded-[0.75rem] lg:flex-wrap lg:w-[75%] justify-between gap-4 mt-2 lg:mt-0 p-2">
-        <div className="flex flex-col w-[25%] lg:w-[30%] items-center">
+        <div className="flex flex-col w-[23%] lg:w-[30%] items-center">
           <img className=" h-[2rem] w-[2rem]" src="/image/humid5.png" alt="" />
           <p className="text-[.9rem]">{main.humidity}%</p>
           <p className="text-[.75rem] font-[500]">Humidity</p>
         </div>
-        <div className="flex flex-col w-[25%] lg:w-[30%] items-center">
+        <div className="flex flex-col w-[23%] lg:w-[30%] items-center">
           <img
             className=" h-[2rem] w-[2rem]"
             src="/image/thermometer.png"
@@ -38,12 +38,12 @@ const Display = ({ cityy, main, wind, weather }) => {
           <p className="text-[.9rem]">{Math.round(main.temp)}°C</p>
           <p className="text-[.75rem] font-[500]">Temperature</p>
         </div>
-        <div className="flex flex-col w-[25%] lg:w-[30%] items-center">
+        <div className="flex flex-col w-[23%] lg:w-[30%] items-center">
           <img className=" h-[2rem] w-[2rem]" src="/image/wind.png" alt="" />
           <p className="text-[.9rem]">{wind}m/s</p>
           <p className="text-[.75rem] font-[500]">Wind</p>
         </div>
-        <div className="flex flex-col w-[25%] lg:w-[30%] items-center">
+        <div className="flex flex-col w-[23%] lg:w-[30%] items-center">
           <img
             className=" h-[2rem] w-[2rem]"
             src="/image/pressureg.png"
