@@ -6,6 +6,7 @@ import WeatherComponents from "./Components/WeatherComponents";
 import axios from "axios";
 
 function App() {
+  // const API
   // const API_key = "b52ebf3479c0ba50f0f006fd016ff13e";
   const [city, setCity] = useState("");
   const [cityy, setCityy] = useState("");
