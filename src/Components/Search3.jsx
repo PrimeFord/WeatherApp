@@ -14,7 +14,7 @@ const Search3 = (props) => {
           placeholder="Enter your city"
           onChange={(e) => props.setCity(e.target.value)}
         />
-        <button>
+        <button onClick={props.locate}>
           <img
             className="h-[2rem] w-[2rem] bg-[#f1f1f1e0] p-[0.6rem] hover:bg-[#c1c1c1]"
             src="/image/map1.svg"

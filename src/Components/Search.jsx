@@ -12,7 +12,7 @@ const Search = (props) => {
             value={props.city}
             onChange={(e) => props.setCity(e.target.value)}
           />
-          <button className="">
+          <button onClick={props.locate} className="">
             <img
               className="h-[2.5rem] w-[2.5rem] rounded-r-[1.25rem] lg:rounded-r-none bg-[#f1f1f1e0] p-[0.6rem] hover:bg-[#c1c1c1]"
               src="/image/map1.svg"

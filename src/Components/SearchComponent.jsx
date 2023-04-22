@@ -14,6 +14,7 @@ const SearchComponent = (props) => {
         fetchWeather={props.fetchWeather}
         empty={props.empty}
         error={props.error}
+        locate={props.locate}
       />
     </div>
   );
