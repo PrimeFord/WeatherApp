@@ -1,0 +1,12 @@
+.load {
+  animation: load 2s linear infinite -2s;
+  @apply border-[3px] w-[5rem] h-[5rem] rounded-[50%] border-t-[#f1f1e0] lg:mt-6 mb-6;
+}
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -10,6 +10,8 @@ const WeatherComponents = ({
   setCity,
   fetchWeather,
   locate,
+  error,
+  empty,
   cityy,
   main,
   wind,
@@ -22,12 +24,16 @@ const WeatherComponents = ({
           setCity={setCity}
           locate={locate}
           fetchWeather={fetchWeather}
+          empty={empty}
+          error={error}
         />
         <Title2 />
         <Search2
           setCity={setCity}
           locate={locate}
           fetchWeather={fetchWeather}
+          empty={empty}
+          error={error}
         />
       </div>
       <div className="flex flex-col lg:flex-row h-[90%] lg:items-center lg:gap-6">

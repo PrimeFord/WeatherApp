@@ -26,6 +26,14 @@ const Search2 = (props) => {
           Search
         </button>
       </form>
+      <div className="lg:hidden flex flex-col mt-1">
+        <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]">
+          {props.empty}
+        </p>
+        <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]]">
+          {props.error}
+        </p>
+      </div>
     </div>
   );
 };

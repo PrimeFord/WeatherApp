@@ -4,6 +4,7 @@ import "./App.css";
 import CityComponents from "./Components/CityComponents";
 import WeatherComponents from "./Components/WeatherComponents";
 import axios from "axios";
+import Load from "./Components/Load";
 
 function App() {
   // const API
@@ -34,7 +35,7 @@ function App() {
       console.log("empty");
     }
     try {
-      // setLoading(true);
+      setLoading(true);
       const res = await axios.get(url1);
       setCityy(res.data.city);
       setMain(res.data.list[0].main);
@@ -48,7 +49,7 @@ function App() {
       setError(error.response.data.message);
       console.log(error.response.data.message);
     } finally {
-      setLoading(true);
+      setLoading(false);
       setCity("");
     }
   };
@@ -113,15 +114,20 @@ function App() {
   return (
     <div className="App">
       {weather ? (
-        <WeatherComponents
-          setCity={setCity}
-          fetchWeather={fetchWeather}
-          locate={locate}
-          cityy={cityy}
-          main={main}
-          wind={wind}
-          weather={weather}
-        />
+        (loading ? <Load /> : "",
+        (
+          <WeatherComponents
+            setCity={setCity}
+            fetchWeather={fetchWeather}
+            locate={locate}
+            cityy={cityy}
+            main={main}
+            wind={wind}
+            weather={weather}
+            empty={empty}
+            error={error}
+          />
+        ))
       ) : (
         <CityComponents
           setCity={setCity}
