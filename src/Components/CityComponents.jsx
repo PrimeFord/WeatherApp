@@ -12,6 +12,7 @@ const CityComponents = (props) => {
         fetchWeather={props.fetchWeather}
         empty={props.empty}
         error={props.error}
+        loading={props.loading}
         locate={props.locate}
       />
     </div>

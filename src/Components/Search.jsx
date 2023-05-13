@@ -1,8 +1,15 @@
 import React from "react";
+import Load from "./Load";
 
 const Search = (props) => {
   return (
     <div className="">
+      <div
+        className="hidden lg:block
+        "
+      >
+        {props.loading ? <Load /> : ""}
+      </div>
       <form className="mt-10 lg:mt-0" action="" onSubmit={props.fetchWeather}>
         <div className="flex flex-row justify-center">
           <input
@@ -36,8 +43,14 @@ const Search = (props) => {
             {props.error}
           </p>
         </div>
+        <div
+          className="block lg:hidden
+        "
+        >
+          {props.loading ? <Load /> : ""}
+        </div>
         <div>
-          <button className="h-[2.5rem] w-[100%] mt-4 block lg:hidden p-2 rounded-[1.25rem] cursor-pointer hover:bg-[#294357] hover:text-[white] text-white bg-[teal]">
+          <button className="h-[2.5rem] w-[100%] mt-4 block lg:hidden p-2 rounded-[1.25rem] cursor-pointer hover:bg-[#294357] hover:text-[white] text-white bg-[#008080]">
             {/* bg-gradient-to-r from-[#071f3d] to-[#294357] */}
             Search
           </button>

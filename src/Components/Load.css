@@ -1,6 +1,6 @@
 .load {
   animation: load 2s linear infinite -2s;
-  @apply border-[3px] w-[5rem] h-[5rem] rounded-[50%] border-t-[#f1f1e0] lg:mt-6 mb-6;
+  @apply border-[5px] w-[2rem] h-[2rem] rounded-[50%] border-t-[#008080] lg:mt-6 mx-auto mt-3 mb-3 lg:mb-6;
 }
 @keyframes load {
   from {

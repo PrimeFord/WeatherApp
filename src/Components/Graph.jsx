@@ -74,12 +74,7 @@ const Graph = ({ weather }) => {
     scales: {
       x: {
         grid: { display: false, tickWidth: 1 },
-        ticks: {
-          // autoSkip: true,
-          // autoSkipPadding: 5,
-          // padding: 5,
-          callback: (value) => value + "C",
-        },
+        ticks: {},
         display: false,
         title: {
           display: true,
@@ -90,11 +85,11 @@ const Graph = ({ weather }) => {
         min: 0,
         max: 80,
         ticks: {
-          callback: (value) => value + "C",
+          callback: (value) => value + "°C",
         },
         title: {
           display: true,
-          text: "Temperature(C)",
+          text: "Temperature(°C)",
         },
       },
     },

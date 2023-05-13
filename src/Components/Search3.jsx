@@ -1,4 +1,5 @@
 import React from "react";
+import Load from "./Load";
 
 const Search3 = (props) => {
   return (
@@ -26,6 +27,7 @@ const Search3 = (props) => {
           Search
         </button>
       </form>
+      {props.loading ? <Load /> : ""}
       <div className="lg:hidden flex text-center m-auto flex-col mt-1">
         <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]">
           {props.empty}

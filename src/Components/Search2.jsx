@@ -1,10 +1,11 @@
 import React from "react";
+import Load from "./Load";
 
 const Search2 = (props) => {
   return (
     <div className="h-fit w-fit hidden lg:block">
       <form
-        className="flex flex-row justify-center"
+        className="flex flex-row justify-center items-center"
         action=""
         onSubmit={props.fetchWeather}
       >
@@ -25,6 +26,12 @@ const Search2 = (props) => {
           {/* bg-gradient-to-r from-[#071f3d] to-[#294357] */}
           Search
         </button>
+        <div
+          className="hidden lg:block ml-4
+        "
+        >
+          {props.loading ? <Load /> : ""}
+        </div>
       </form>
       <div className="lg:hidden flex flex-col mt-1">
         <p className="text-[#ff661ff6] lg:text-left lg:ml-[10rem]">

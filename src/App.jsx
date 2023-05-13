@@ -23,12 +23,11 @@ function App() {
 
   const url1 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
 
-  const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`;
+  const url2 = url;
 
   const fetchWeather = async (e) => {
-    // setUrl(url1);
     e.preventDefault();
-    if (city.trim().length !== 0 && locate == false) {
+    if (city.trim().length !== 0 && locate == true) {
       setEmpty("");
     } else {
       setEmpty("Please enter a city name in this field");
@@ -36,6 +35,7 @@ function App() {
     }
     try {
       setLoading(true);
+      setEmpty("");
       const res = await axios.get(url1);
       setCityy(res.data.city);
       setMain(res.data.list[0].main);
@@ -43,19 +43,22 @@ function App() {
       setWind(res.data.list[0].wind.speed);
       setWeather(res.data);
       console.log(res);
-      // setError("");
     } catch (error) {
       console.log(error);
       setError(error.response.data.message);
       console.log(error.response.data.message);
     } finally {
       setLoading(false);
+      setError("");
       setCity("");
     }
   };
 
   //locator
+  let longer = "";
   const locate = async (e) => {
+    e.preventDefault();
+
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -65,9 +68,16 @@ function App() {
       const crd = pos.coords;
       const lat = pos.coords.latitude;
       const long = pos.coords.longitude;
+      longer = pos.coords.longitude;
       setLat(lat);
       setLong(long);
-      setEmpty("");
+      setUrl(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`
+      );
+      console.log(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=b52ebf3479c0ba50f0f006fd016ff13e&units=metric`
+      );
+      console.log(url);
       // setError("");
       console.log("Your current position is:");
       console.log(`Latitude : ${crd.latitude}`);
@@ -83,12 +93,12 @@ function App() {
       setError(err.message);
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-
     navigator.geolocation.getCurrentPosition(success, error, options);
 
-    e.preventDefault();
     try {
-      // setLoading(true);
+      // const longer = long;
+      console.log(lat);
+      setLoading(true);
       const res = await axios.get(url2);
       setCityy(res.data.city);
       setMain(res.data.list[0].main);
@@ -102,7 +112,7 @@ function App() {
       setError(error.response.data.message);
       console.log(error.response.data.message);
     } finally {
-      setLoading(true);
+      // setLoading(flase);
       setCity("");
     }
   };
@@ -126,6 +136,7 @@ function App() {
             weather={weather}
             empty={empty}
             error={error}
+            loading={loading}
           />
         ))
       ) : (
@@ -136,6 +147,7 @@ function App() {
           error={error}
           fetchWeather={fetchWeather}
           locate={locate}
+          loading={loading}
         />
       )}
     </div>
