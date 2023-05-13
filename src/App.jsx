@@ -27,7 +27,7 @@ function App() {
 
   const fetchWeather = async (e) => {
     e.preventDefault();
-    if (city.trim().length !== 0 && locate == true) {
+    if (city.trim().length !== 0 && lat !== 0) {
       setEmpty("");
     } else {
       setEmpty("Please enter a city name in this field");
@@ -35,7 +35,7 @@ function App() {
     }
     try {
       setLoading(true);
-      setEmpty("");
+      setError("");
       const res = await axios.get(url1);
       setCityy(res.data.city);
       setMain(res.data.list[0].main);
@@ -49,9 +49,9 @@ function App() {
       console.log(error.response.data.message);
     } finally {
       setLoading(false);
-      setError("");
       setCity("");
     }
+    // setEmpty("");/
   };
 
   //locator
@@ -96,9 +96,9 @@ function App() {
     navigator.geolocation.getCurrentPosition(success, error, options);
 
     try {
-      // const longer = long;
       console.log(lat);
       setLoading(true);
+      setCity("");
       const res = await axios.get(url2);
       setCityy(res.data.city);
       setMain(res.data.list[0].main);
@@ -112,15 +112,10 @@ function App() {
       setError(error.response.data.message);
       console.log(error.response.data.message);
     } finally {
-      // setLoading(flase);
-      setCity("");
+      setLoading(false);
     }
   };
-  // useEffect(() => {
-  //   if (city.length) {
-  //     fetchData();
-  //   }
-  // }, [city]);
+
   return (
     <div className="App">
       {weather ? (

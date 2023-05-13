@@ -4,12 +4,6 @@ import Load from "./Load";
 const Search = (props) => {
   return (
     <div className="">
-      <div
-        className="hidden lg:block
-        "
-      >
-        {props.loading ? <Load /> : ""}
-      </div>
       <form className="mt-10 lg:mt-0" action="" onSubmit={props.fetchWeather}>
         <div className="flex flex-row justify-center">
           <input
@@ -54,6 +48,12 @@ const Search = (props) => {
             {/* bg-gradient-to-r from-[#071f3d] to-[#294357] */}
             Search
           </button>
+        </div>
+        <div
+          className="hidden lg:block
+        "
+        >
+          {props.loading ? <Load /> : ""}
         </div>
       </form>
     </div>
