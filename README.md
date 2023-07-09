@@ -25,7 +25,7 @@ Clone or download this repository and run with a local server of open `index.htm
 
 ## Preview
 
-[Preview Here](https://weather-app-pi-swar.app/)
+[Preview Here](https://weather-app-pi-swar.app)
 
 ![screenshot](./public/image/snip.png)
 
