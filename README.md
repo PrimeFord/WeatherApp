@@ -1,6 +1,6 @@
 # WeatherApp
 
-Weather App: This Project shows the weather condition of a searched location and the forecast of the next five days.... it visualize the location's windspeed, humidity, pressure and temperature graph.
+Weather App: This Project shows the weather condition of a searched location and the forecast of the next five days. it visualize the location's windspeed, humidity, pressure and temperature graph.
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Clone or download this repository and run with a local server of open `index.htm
 
 ## Preview
 
-[Preview Here](https://weather-app-pi-rosy.vercel.app/)
+[Preview Here](https://weather-app-pi-swar.app/)
 
 ![screenshot](./public/image/snip.png)
 
@@ -34,9 +34,8 @@ Clone or download this repository and run with a local server of open `index.htm
 ## Contact
 
 If you want to contact me you can reach me at
--wolabash@gmail.com -https://github.com/PrimeFord
+swarnavinay05@gmail.com
 
-## Addtional Info
 
-- This is one of the series of project for the @Codevillage Programming Lessons.
-- This is not meant for production. It's for learning purpose only
+
+
